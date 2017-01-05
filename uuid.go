@@ -90,6 +90,11 @@ func Equal(uuid1, uuid2 UUID) bool {
 	return bytes.Equal(uuid1, uuid2)
 }
 
+// Equal returns true if uuid1 and uuid2 are equal.
+func (uuid UUID) Equal(uuid2 UUID) bool {
+	return Equal(uuid, uuid2)
+}
+
 // Array returns an array representation of uuid that can be used as a map key.
 // Array panics if uuid is not valid.
 func (uuid UUID) Array() Array {
